@@ -1,0 +1,1 @@
+A simple app which tells the time of the user. You can also change the timezone.
