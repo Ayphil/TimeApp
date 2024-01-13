@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/ccadf15545.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+
+        <div style="margin: 200px 250px 0 0; text-align: right;">
+            <a style="text-align:right; vertical-align:middle; font-size: 40px; margin:0; color:gray;" id="userTimezone">User Timezone </a>
+            <i data-micromodal-trigger="modal-1" style="margin-left: 20px" class="fa-regular fa-pen-to-square fa-2xl"></i>
+            <h1 style="font-size: 110px; margin:0;" id="currentTime">00:00:00</h1>
+            <h3 style="font-size: 50px; margin:0;" id="currentDate">9 march 2009</h3>
+        </div>
+
+
+        
+        <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+              <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <header class="modal__header">
+                  <h2 class="modal__title" id="modal-1-title">
+                   Change Timezone
+                  </h2>
+                </header>
+                <main class="modal__content" id="modal-1-content">
+                    <form action="">
+                        <select name="timezoneDropdown" id="timezoneDropdown" placeholder="Choose a Timezone:">
+                            <option value="" disabled selected>Choose a timezone</option>
+                            <option value="America/Toronto">Toronto</option>
+                            <option value="Europe/Rome">Rome</option>
+                            <option value="Asia/Hong_Kong">Hong Kong</option>
+                        </select>
+                        <input style="font-size:23px; padding:5px"data-micromodal-close class="modal__btn modal__btn-primary" type="submit" value="Apply" onclick="ChangeTimezone((document.getElementById('timezoneDropdown').value))">
+                      </form>
+                </main>
+              </div>
+            </div>
+        </div>
+
+        <script src="node_modules/dayjs/dayjs.min.js"></script>
+        <script src="node_modules/dayjs/plugin/utc.js"></script>
+        <script src="node_modules/dayjs/plugin/timezone.js"></script>
+        <script src ="node_modules/micromodal/dist/micromodal.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
